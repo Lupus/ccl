@@ -1,0 +1,8 @@
+ccl (1.0.0) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Initial upstream version
+  * Changed build system to cmake
+  * Fixed some compiler warnings
+
+ -- Konstantin Olkhovskiy <kolkhovskiy@kolkhovskiy-laptop>  Wed, 04 Sep 2013 13:58:16 +0400

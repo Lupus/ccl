@@ -1,0 +1,18 @@
+Source: ccl
+Priority: extra
+Maintainer: Konstantin Olkhovskiy <lupus@oxnull.net>
+Build-Depends: debhelper (>= 7), cmake, libc6-dev
+Standards-Version: 3.8.3
+Section: devel
+
+Package: libccl-dev
+Section: libdevel
+Architecture: any
+Depends: libccl1 (= ${binary:Version})
+Description: Development counterpart for libccl
+
+Package: libccl1
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: C containers library

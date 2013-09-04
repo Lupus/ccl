@@ -1870,7 +1870,7 @@ static DlistElement *Skip(DlistElement *le, size_t n)
 
 static int RotateLeft(Dlist * l, size_t n)
 {
-    DlistElement    *rvp, *oldStart, *last = NULL;
+    DlistElement    *rvp, *oldStart;
     if (l == NULL)
         return iError.NullPtrError("iDlist.RotateLeft");
     if (l->Flags & CONTAINER_READONLY) {
@@ -1885,7 +1885,6 @@ static int RotateLeft(Dlist * l, size_t n)
     rvp = l->First;
     oldStart = rvp;
     while (n > 0) {
-        last = rvp;
         rvp = rvp->Next;
         n--;
     }
@@ -1900,7 +1899,7 @@ static int RotateLeft(Dlist * l, size_t n)
 
 static int RotateRight(Dlist * l, size_t n)
 {
-    DlistElement    *rvp, *oldStart, *last = NULL;
+    DlistElement    *rvp, *oldStart;
     if (l == NULL)
         return iError.NullPtrError("iDlist.RotateRight");
     if (l->Flags & CONTAINER_READONLY) {
@@ -1916,7 +1915,6 @@ static int RotateRight(Dlist * l, size_t n)
     oldStart = rvp;
     n = l->count - n;
     while (n > 0) {
-        last = rvp;
         rvp = rvp->Next;
         n--;
     }

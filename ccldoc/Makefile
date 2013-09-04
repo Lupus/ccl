@@ -1,5 +1,5 @@
-MAKEINDEX=/usr/texbin/makeindex
-PDFLATEX=/usr/texbin/pdflatex
+MAKEINDEX=makeindex
+PDFLATEX=pdflatex
 PNGS=AuxiliaryInterfaces.png DListVocabulary.png Pool.png  bitstrings.png Basic.png  Dictionary.png  StreamBuffer.png list.png BloomFilter.png  Iterator.png  ValArray.png Circular.png  ListVocabulary.png VectorVocabulary.png Containers.png  Memorymanagement.png Vocabulary.png
 
 all:	ccl.pdf ccl.html

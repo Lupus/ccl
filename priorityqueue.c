@@ -131,12 +131,6 @@ static int ceillog2(unsigned v)
 #endif
 static void DeleteElement(PQueue *h, PQueueElement *x)
 {
-    void *data;
-    intptr_t key;
-
-    data = x->Data;
-    key = x->Key;
-
     Replace(h, x, INT_MIN);
     if (ExtractMin(h) != x) {
         abort();
@@ -641,28 +635,6 @@ static int Equal(const PQueue *src1, const PQueue *src2)
     return 1;
 }
 
-
-static PQueueElement *FindInLevel(PQueueElement *root,intptr_t key)
-{
-    PQueueElement *x;
-    
-    if (root == NULL) return NULL;
-    x = root->Right;
-    while (x != root) {
-        if (x->Key == key) return x;
-        x = x->Right;
-    }
-    return FindInLevel(x->Child, key);
-}
-
-
-static void *Find(PQueue *p,intptr_t key)
-{
-    PQueueElement *x;
-    
-    x = FindInLevel(p->Root,key);
-    return x;
-}
 
 PQueueInterface iPQueue = {
     Add,
